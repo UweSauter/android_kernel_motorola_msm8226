@@ -271,7 +271,9 @@ struct f2fs_filename {
 #endif
 };
 
+#ifndef QSTR_INIT
 #define QSTR_INIT(n, l)		{ .name = n, .len = l }
+#endif
 #define FSTR_INIT(n, l)		{ .name = n, .len = l }
 #define FSTR_TO_QSTR(f)		QSTR_INIT((f)->name, (f)->len)
 #define fname_name(p)		((p)->disk_name.name)
